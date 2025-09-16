@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Website của tôi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lý Gia Huy — Trang cá nhân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1221; --text:#e6eef8; --muted:#a7b0c2; --brand:#7c3aed; --brand-2:#a78bfa;
+      --card:#141a33; --line:#243252;
+    }
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    /* Header */
+    header{position:sticky;top:0;background:rgba(15,18,33,.7);backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(167,176,194,.15); z-index:10}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-weight:800;letter-spacing:.2px}
+    .logo b{color:var(--brand)}
+    .navlinks{display:flex;gap:20px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;
+      border-radius:12px;font-weight:600}
+    .btn-primary{background:var(--brand);color:white}
+    .btn-primary:hover{filter:brightness(1.1)}
+    .btn-outline{border:2px solid var(--brand);color:var(--brand);background:transparent}
+    .btn-outline:hover{background:rgba(124,58,237,.08)}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;min-height:72vh}
+    .title{font-size:44px;line-height:1.15;font-weight:800;margin:0 0 8px}
+    .title .accent{color:var(--brand-2)}
+    .role{font-size:22px;font-weight:700;color:#d5ddf0;margin:0 0 12px}
+    .lead{color:var(--muted);max-width:54ch}
+    .cta{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
+    .social{display:flex;gap:10px;margin-top:28px}
+    .social a{width:36px;height:36px;border-radius:999px;border:1.5px solid #3a4666;display:grid;place-items:center}
+    .card{background:linear-gradient(180deg,rgba(20,26,51,.6),rgba(20,26,51,.3));border:1px solid #22304e;border-radius:18px}
+    .headshot{width:100%;max-width:520px;aspect-ratio:1/1.05;object-fit:cover;border-radius:22px;
+      border:1px solid #2a3a60; box-shadow:0 10px 40px rgba(124,58,237,.25)}
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr;gap:18px;min-height:auto;padding-top:24px}
+      .title{font-size:36px}
+      .role{font-size:20px}
+      .navlinks{display:none}
+    }
+  </style>
 </head>
 <body>
-  <h1>Xin chào 👋</h1>
-  <p>Đây là website đầu tiên của tôi.</p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Huy<b>.</b></div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <!-- Left: text -->
+      <div>
+        <h1 class="title">Hi, I'm <span class="accent">Lý Gia Huy</span></h1>
+        <p class="role">Sinh viên Sư phạm Khoa học Tự nhiên — HCMUE</p>
+        <p class="lead">
+          Mình yêu thích giảng dạy Khoa học và thiết kế học liệu. Mục tiêu là
+          giúp học sinh khám phá Vật lý, Hoá học, Sinh học một cách trực quan và thú vị.
+        </p>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Liên hệ</a>
+          <a class="btn btn-outline" href="#portfolio">Xem Projects</a>
+        </div>
+
+        <div class="social">
+          <!-- Thay # bằng link thật của bạn -->
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+
+      <!-- Right: portrait -->
+      <div class="card" style="padding:14px;display:grid;place-items:center">
+        <!-- TODO: đổi src thành ảnh chân dung của bạn. Cách dễ: upload ảnh vào repo và dùng đường dẫn ./ten-anh.jpg -->
+        <img class="headshot" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop" alt="Ảnh chân dung của Lý Gia Huy">
+      </div>
+    </section>
+  </main>
 </body>
 </html>
